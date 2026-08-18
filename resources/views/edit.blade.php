@@ -9,8 +9,8 @@
     @csrf
     <input type="text" name="item-name" placeholder="Item name" value="{{ $item->name }}"/>
     <input type="text" name="sku" placeholder="SKU" value="{{ $item->sku }}"/>
-    <input type="text" name="stock-amount" placeholder="Stock amount" value="{{ $item->stock_amount }}"/>
-    <input type="text" name="minimum-stock" placeholder="Minimum stock" value="{{ $item->minimum_stock }}"/>
+    <input type="number" name="stock-amount" placeholder="Stock amount" value="{{ $item->stock_amount }}"/>
+    <input type="number" name="minimum-stock" placeholder="Minimum stock" value="{{ $item->minimum_stock }}"/>
     <input type="submit" value="submit"/>
 </form>
 

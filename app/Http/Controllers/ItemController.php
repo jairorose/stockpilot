@@ -41,8 +41,8 @@ class ItemController extends Controller
         $item = Item::create([
             'name' => $request->input('item-name'),
             'sku' => $request->input('sku'),
-            'stock-amount' => $request->input('stock-amount'),
-            'minimum-stock' => $request->input('minimum-stock')
+            'stock_amount' => $request->integer('stock-amount'),
+            'minimum_stock' => (int)$request->input('minimum-stock')
         ]);
 
         // Show newly made item to user

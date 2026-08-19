@@ -4,7 +4,7 @@
 
 <div class="hero-container">
     <div class="hero-box">
-        <div>
+        <div class="logo">
             <div>StockPilot</div>
         </div>
 

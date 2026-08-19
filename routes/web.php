@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 Route::resource('items', ItemController::class)
     ->middleware('auth');
 

@@ -8,7 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('items', ItemController::class);
+Route::resource('items', ItemController::class)
+    ->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'create'])
     ->name('login');

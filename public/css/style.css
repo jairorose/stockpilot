@@ -260,7 +260,7 @@ main {
     color: #2f4858;
 }
 
-.low-stock-card {
+.stock-card {
     margin-bottom: 24px;
 }
 
@@ -268,4 +268,10 @@ main {
     display: flex;
     justify-content: end;
     gap: 12px;
+}
+
+/* ITEMS PAGE */
+
+.toolbar-row {
+    margin-bottom: 26px;
 }

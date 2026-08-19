@@ -25,7 +25,7 @@
                 <b class="stat-value">17</b>
             </div>
         </div>
-        <div class="card low-stock-card">
+        <div class="card stock-card">
             <div class="data-table-header">
                 <h2>Low stock</h2>
                 <a href="">All items</a>

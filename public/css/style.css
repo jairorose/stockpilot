@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+ 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+ 
+body {
+  margin: 0;
+  background: #ecefe7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HOMEPAGE */
+
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-box {
+    max-width: 560px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 4px;
+    display: inline-flex;
+}
+
+.btn-primary {
+    background: #1f323d;
+    color: #fff;
+    font-weight: bold;
+}
+
+p {
+    color: #565c51;
+}
+
+.hero-box p {
+    margin-bottom: 32px;
+}

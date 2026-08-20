@@ -11,7 +11,7 @@
             </div>
             <span class="date">Wednesday, August 19</span>
         </div>
-        <div class="card create-item">
+        <div class="card item-form">
             <form method="POST" action="{{ route('items.store') }}">
                 @csrf
                 <div class="field">

@@ -276,14 +276,14 @@ main {
     margin-bottom: 26px;
 }
 
-.field .note {
+.field .note, .delete-section .note {
     font-size: 0.8rem;
     color: #8b9084;
     margin-top: 6px;
     display: flex;
 }
 
-.create-item {
+.item-form {
     max-width: 560px;
 }
 
@@ -318,4 +318,22 @@ main {
     padding: 10px 0;
     border-bottom: 1px solid #d9dccf;
     font-size: 0.9rem;
+}
+
+.delete-section {
+    border-top: 1px dashed #d9dccf;
+    padding-top: 18px;
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline-danger {
+    background: transparent;
+    border: 1px solid #b54b3c;
+    color: #b54b3c;
+}
+
+.btn-outline-danger:hover {
+    background: #f7e7e2;
 }

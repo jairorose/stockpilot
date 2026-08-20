@@ -5,7 +5,11 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 Route::resource('items', ItemController::class)

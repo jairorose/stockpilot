@@ -337,3 +337,9 @@ main {
 .btn-outline-danger:hover {
     background: #f7e7e2;
 }
+
+.tag-warning {
+    padding: 5px 10px;
+    background-color: #e2a63b;
+    color: #4a3407;
+}

@@ -32,7 +32,11 @@
                             <td>{{ $item->sku }}</td>
                             <td>{{ $item->stock_amount }}</td>
                             <td>{{ $item->minimum_stock }}</td>
-                            <td></td>
+                            <td>
+                                @if ($item->minimum_stock >= $item->stock_amount)
+                                    <span class="tag-warning">Low stock</span>
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

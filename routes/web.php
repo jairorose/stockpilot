@@ -10,7 +10,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard');
+    ->name('dashboard')
+    ->middleware('auth');
 
 Route::resource('items', ItemController::class)
     ->middleware('auth');

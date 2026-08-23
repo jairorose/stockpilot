@@ -10,8 +10,8 @@
         <div class="side-menu">
             <div class="logo">StockPilot</div>
             <nav>
-                <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
-                <a href="{{ route('items.index') }}" class="nav-link">Items</a>
+                <a href="{{ route('dashboard') }}" class="nav-link {{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}">Dashboard</a>
+                <a href="{{ route('items.index') }}" class="nav-link {{ Route::currentRouteNamed('items.*') ? 'active' : '' }}">Items</a>
             </nav>
         </div>
         <div class="content-container">

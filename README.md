@@ -1,58 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# StockPilot
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+StockPilot is an inventory management application built with Laravel, PHP, and MySQL. It lets you track stock items, including quantities and minimum stock thresholds, for any type of product. Adding a new product type doesn't require any code changes: you simply add it as a new item.
 
-## About Laravel
+This project was built as a personal / portfolio project, based on a real inventory need for a business.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features (v1.0)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Authentication** — secure login system
+- **Item management (CRUD)** — create, view, edit, and delete stock items
+- **Dashboard** — a quick overview of the total number of items and which items are currently below their minimum stock level ("low stock")
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Coming soon
 
-## Learning Laravel
+The following features are planned for an upcoming release and are **not yet part of this version**:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **User registration** — support for multiple users, each managing their own separate set of items
+- **Stock mutations** — stock quantities will no longer be edited directly through the item form. Instead, increases and decreases will be logged as individual mutations (e.g. purchase, sale, correction), giving you a full history of how and why stock levels changed over time
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Tech stack
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- [Laravel](https://laravel.com/) (PHP framework)
+- MySQL
+- Blade templates
 
-## Agentic Development
+## Getting started (local setup)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Prerequisites
+
+- PHP (8.1 or higher recommended)
+- [Composer](https://getcomposer.org/)
+- Node.js & npm
+- MySQL, or Docker if you'd rather run MySQL in a container
+- Git
+
+### 1. Clone the repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/jairorose/stockpilot.git
+cd stockpilot
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install dependencies
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configure your environment
 
-## Code of Conduct
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Open `.env` and fill in your database credentials (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, etc.).
 
-## Security Vulnerabilities
+### 4. Set up the database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you don't already have a MySQL server running, you can spin one up quickly with Docker:
 
-## License
+```bash
+docker run --name stockpilot-mysql \
+  -e MYSQL_ROOT_PASSWORD=secret \
+  -e MYSQL_DATABASE=stockpilot \
+  -p 3306:3306 \
+  -d mysql:8
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Then run the migrations:
+
+```bash
+php artisan migrate
+```
+
+### 5. Create a user
+
+Registration isn't available yet, so you'll need to create your first user manually via Tinker:
+
+```bash
+php artisan tinker
+```
+
+```php
+App\Models\User::create([
+    'name' => 'Admin',
+    'email' => 'admin@example.com',
+    'password' => bcrypt('password'),
+]);
+```
+
+### 6. Build frontend assets and start the server
+
+```bash
+npm run build
+php artisan serve
+```
+
+Visit `http://127.0.0.1:8000`, log in with the account you just created, and you're in.
+
+## Usage
+
+Once logged in, you can:
+
+- Add new items from the **Items** overview, including a name, SKU, unit, and minimum stock level
+- Edit or delete existing items
+- Check the **Dashboard** for a quick overview of your total item count and which items have dropped below their minimum stock level
+
+## Roadmap
+
+- [ ] User registration with separated items per user
+- [ ] Stock mutations (increase/decrease via logged mutations instead of direct edits)
+- [ ] Mutation history per item

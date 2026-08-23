@@ -343,3 +343,39 @@ main {
     background-color: #e2a63b;
     color: #4a3407;
 }
+
+/* SIDE MENU */
+
+.side-menu {
+    background-color: #2f4858;
+    padding: 28px 22px;
+    width: 16%;
+    height: 100vh;
+    position: fixed;
+}
+
+.content-container {
+    margin-left: 16%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.65rem 0.75rem;
+    border-radius: 4px;
+    color: rgba(236, 238, 231, 0.72);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    background: rgba(236, 238, 231, 0.14);
+    color: #fff;
+}
+
+.side-menu .logo {
+    margin-bottom: 36px;
+    color: #fff;
+}

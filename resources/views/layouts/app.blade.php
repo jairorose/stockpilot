@@ -10,7 +10,7 @@
         <div class="side-menu">
             <div class="logo">StockPilot</div>
             <nav>
-                <a href="" class="nav-link">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
                 <a href="{{ route('items.index') }}" class="nav-link">Items</a>
             </nav>
         </div>

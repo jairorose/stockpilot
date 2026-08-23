@@ -26,16 +26,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="">Zwart T-Shirt maat S</a></td>
-                        <td>TS-BLK-S</td>
-                        <td>4</td>
-                        <td>10</td>
-                        <td>Low on stock</td>
-                    </tr>
                     @foreach ($items as $item)
                         <tr>
-                            <td><a href="">{{ $item->name }}</a></td>
+                            <td><a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></td>
                             <td>{{ $item->sku }}</td>
                             <td>{{ $item->stock_amount }}</td>
                             <td>{{ $item->minimum_stock }}</td>

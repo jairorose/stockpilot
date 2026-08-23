@@ -31,7 +31,7 @@
                     <input type="number" name="minimum-stock" value="{{ $item->minimum_stock }}"/>
                 </div>
                 <div class="btn-row">
-                    <a href="" class="btn btn-outline-secondary">Cancel</a>
+                    <a href="{{ route('items.show', $item->id) }}" class="btn btn-outline-secondary">Cancel</a>
                     <button class="btn btn-primary" type="submit">Save changes</button>
                 </div>
             </form>

@@ -14,21 +14,17 @@
         <div class="stat-row">
             <div class="card stat-card">
                 <span class="stat-label">Total items</span>
-                <b class="stat-value">128</b>
+                <b class="stat-value">{{ $itemCount }}</b>
             </div>
             <div class="card stat-card">
                 <span class="stat-label">Low stock</span>
-                <b class="stat-value">4</b>
-            </div>
-            <div class="card stat-card">
-                <span class="stat-label">Lorem ispum</span>
-                <b class="stat-value">17</b>
+                <b class="stat-value">{{ $lowStockCount }}</b>
             </div>
         </div>
         <div class="card stock-card">
             <div class="data-table-header">
                 <h2>Low stock</h2>
-                <a href="">All items</a>
+                <a href="{{ route('items.index') }}">All items</a>
             </div>
             <table class="data-table">
                 <thead>
@@ -40,18 +36,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="">Zwart T-Shirt maat S</a></td>
-                        <td>TS-BLK-S</td>
-                        <td>4</td>
-                        <td>10</td>
-                    </tr>
+                    @foreach ($lowStockItems as $item)
+                        <tr>
+                            <td><a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></td>
+                            <td>{{ $item->sku }}</td>
+                            <td>{{ $item->stock_amount }}</td>
+                            <td>{{ $item->minimum_stock }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
         <div class="btn-row">
-            <a href="" class="btn btn-outline-secondary">View items</a>
-            <a href="" class="btn btn-primary">New item</a>
+            <a href="{{ route('items.index') }}" class="btn btn-outline-secondary">View items</a>
+            <a href="{{ route('items.create') }}" class="btn btn-primary">New item</a>
         </div>
     </main>
 </div>

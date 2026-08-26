@@ -16,6 +16,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 Route::resource('items', ItemController::class)
     ->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'create'])
+// Make sure login page only shows when user is not logged in
+Route::middleware('guest')->group(function() {
+    Route::get('/login', [LoginController::class, 'create'])
     ->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+    Route::post('/login', [LoginController::class, 'authenticate']);
+});

@@ -56,6 +56,8 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
 
+        //dd($item->mutations);
+
         return view('show', compact('item'));
     }
 
@@ -78,7 +80,6 @@ class ItemController extends Controller
 
         $item->name = $request->input('item-name');
         $item->sku = $request->input('sku');
-        $item->stock_amount = $request->input('stock-amount');
         $item->minimum_stock = $request->input('minimum-stock');
 
         $item->save();

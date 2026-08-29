@@ -280,7 +280,7 @@ main {
     font-size: 0.8rem;
     color: #8b9084;
     margin-top: 6px;
-    display: flex;
+    display: block;
 }
 
 .item-form {
@@ -342,6 +342,30 @@ main {
     padding: 5px 10px;
     background-color: #e2a63b;
     color: #4a3407;
+}
+
+.row.item-mutation {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+.card-header {
+    margin-bottom: 22px;
+}
+
+.greyed-out {
+    color: #8b9084;
+}
+
+.mutation-container {
+    gap: 20px;
+    display: grid;
+}
+
+input:disabled {
+    background-color: #f5f6f1;
+    color: #565c51;
 }
 
 /* SIDE MENU */

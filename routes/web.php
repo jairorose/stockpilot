@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MutationController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -22,3 +23,7 @@ Route::middleware('guest')->group(function() {
     ->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
 });
+
+Route::post('mutation', [MutationController::class, 'store'])
+    ->name('mutation.store')
+    ->middleware('auth');

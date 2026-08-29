@@ -280,7 +280,7 @@ main {
     font-size: 0.8rem;
     color: #8b9084;
     margin-top: 6px;
-    display: flex;
+    display: block;
 }
 
 .item-form {
@@ -361,6 +361,11 @@ main {
 .mutation-container {
     gap: 20px;
     display: grid;
+}
+
+input:disabled {
+    background-color: #f5f6f1;
+    color: #565c51;
 }
 
 /* SIDE MENU */

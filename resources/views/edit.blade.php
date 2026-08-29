@@ -19,16 +19,19 @@
                     <input type="text" name="item-name" value="{{ $item->name }}"/>
                 </div>
                 <div class="field">
-                    <label for="email">SKU (optional)</label>
+                    <label for="email">SKU <span class="greyed-out">(optional)</span></label>
                     <input type="text" name="sku" value="{{ $item->sku }}"/>
                 </div>
                 <div class="field">
                     <label for="email">Current stock</label>
-                    <input type="number" name="stock-amount" value="{{ $item->stock_amount }}"/>
+                    <input type="number" name="stock-amount" value="{{ $item->stock_amount }}" disabled/>
+                    <div>
+                        <span class="note">Edit the stock amount as a mutation <a href="{{ route('items.show', $item->id) }}">here</a></span>
+                    </div>
                 </div>
                 <div class="field">
                     <label for="email">Minimum stock</label>
-                    <input type="number" name="minimum-stock" value="{{ $item->minimum_stock }}"/>
+                    <input type="number" name="minimum-stock" value="{{ $item->minimum_stock }}" />
                 </div>
                 <div class="btn-row">
                     <a href="{{ route('items.show', $item->id) }}" class="btn btn-outline-secondary">Cancel</a>

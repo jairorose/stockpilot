@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="mutation-container">
                 <div class="card">
                     <div class="card-header">
                         <h2>New mutation</h2>
@@ -59,7 +59,29 @@
                     </from>
                 </div>
                 <div class="card">
-                    <h2>Mutation history</h2>
+                    <div class="card-header">
+                        <h2>Mutation history</h2>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Type</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($item->mutations as $mutation)
+                                <tr>
+                                    <td>{{ $mutation->created_at }}</td>
+                                    <td>{{ $mutation->amount }}</td>
+                                    <td>{{ $mutation->type }}</td>
+                                    <td>{{ $mutation->note }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

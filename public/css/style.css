@@ -358,6 +358,11 @@ main {
     color: #8b9084;
 }
 
+.mutation-container {
+    gap: 20px;
+    display: grid;
+}
+
 /* SIDE MENU */
 
 .side-menu {

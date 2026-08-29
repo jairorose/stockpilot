@@ -56,6 +56,8 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
 
+        //dd($item->mutations);
+
         return view('show', compact('item'));
     }
 

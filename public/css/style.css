@@ -344,6 +344,20 @@ main {
     color: #4a3407;
 }
 
+.row.item-mutation {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+.card-header {
+    margin-bottom: 22px;
+}
+
+.greyed-out {
+    color: #8b9084;
+}
+
 /* SIDE MENU */
 
 .side-menu {

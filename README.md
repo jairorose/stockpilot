@@ -9,13 +9,13 @@ This project was built as a personal / portfolio project, based on a real invent
 - **Authentication** — secure login system
 - **Item management (CRUD)** — create, view, edit, and delete stock items
 - **Dashboard** — a quick overview of the total number of items and which items are currently below their minimum stock level ("low stock")
+- **Stock mutations** — stock quantities are logged as individual mutations (e.g. purchase, sale, correction) giving you a full history of how and why stock levels changed over time
 
 ## Coming soon
 
 The following features are planned for an upcoming release and are **not yet part of this version**:
 
 - **User registration** — support for multiple users, each managing their own separate set of items
-- **Stock mutations** — stock quantities will no longer be edited directly through the item form. Instead, increases and decreases will be logged as individual mutations (e.g. purchase, sale, correction), giving you a full history of how and why stock levels changed over time
 
 ## Tech stack
 
@@ -110,5 +110,5 @@ Once logged in, you can:
 ## Roadmap
 
 - [ ] User registration with separated items per user
-- [ ] Stock mutations (increase/decrease via logged mutations instead of direct edits)
-- [ ] Mutation history per item
+- [x] Stock mutations (increase/decrease via logged mutations instead of direct edits)
+- [x] Mutation history per item
